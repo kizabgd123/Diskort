@@ -23,6 +23,15 @@ def main():
     test_contains("src/styles.css", "@media (max-width: 860px)")
     test_contains("docs/fk-sava-45-system.md", "Stripe Billing")
     test_contains("docs/fk-sava-45-system.md", "Square")
+    test_contains("backend/internal/googleadapter/handler.go", "POST /google-reserve/checkout")
+    test_contains("backend/internal/googleadapter/handler.go", "POST /google-reserve/bookings")
+    test_contains("backend/internal/booking/service.go", "Authorize(ctx, paymentIntentID)")
+    test_contains("backend/internal/booking/service.go", "locks.Acquire")
+    test_contains("backend/internal/booking/service.go", "Capture(ctx, paymentIntentID)")
+    test_contains("backend/migrations/001_init.sql", "one_confirmed_booking_per_slot")
+    test_contains("backend/internal/booking/redis_lock.go", "SET",)
+    test_contains("backend/internal/payment/stripe.go", "capture_method")
+    test_contains("backend/README.md", "Google Reserve")
     print("static checks passed")
 
 

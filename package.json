@@ -5,6 +5,6 @@
   "type": "module",
   "scripts": {
     "dev": "python3 -m http.server 5173",
-    "test": "python3 tests/static_checks.py"
+    "test": "python3 tests/static_checks.py && cd backend && go test ./... -count=1 -timeout=30s"
   }
 }

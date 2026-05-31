@@ -1,0 +1,71 @@
+:root {
+  color: #18202a;
+  background: #f5f7f4;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+a { color: inherit; }
+main { padding: 32px; max-width: 1240px; margin: 0 auto; }
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.5fr);
+  gap: 24px;
+  align-items: stretch;
+  background: linear-gradient(135deg, #0b5f3a, #0e8f56);
+  color: white;
+  border-radius: 32px;
+  padding: 40px;
+  box-shadow: 0 24px 80px rgba(11, 95, 58, 0.22);
+}
+
+.hero h1 { font-size: clamp(2.2rem, 6vw, 4.6rem); line-height: 0.95; margin: 0 0 20px; max-width: 880px; }
+.hero p { font-size: 1.1rem; max-width: 760px; color: rgba(255, 255, 255, 0.86); }
+.eyebrow { text-transform: uppercase; letter-spacing: 0.14em; font-weight: 800; font-size: 0.78rem; color: #d9ff72; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.hero-actions a, button, .confirmation a {
+  border: 0;
+  border-radius: 999px;
+  padding: 13px 18px;
+  background: white;
+  color: #0b5f3a;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+}
+.hero-actions .primary, button { background: #d9ff72; color: #14310f; }
+.metrics { display: grid; gap: 14px; margin: 0; }
+.metrics div { background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.2); border-radius: 22px; padding: 20px; }
+.metrics dt { color: rgba(255,255,255,0.68); }
+.metrics dd { margin: 4px 0 0; font-size: 1.8rem; font-weight: 900; }
+
+.ops-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 28px 0; }
+.ops-grid article, .booking-card, .calendar-toolbar { background: white; border-radius: 24px; padding: 24px; box-shadow: 0 12px 36px rgba(15, 23, 42, 0.08); }
+.ops-grid h2, .booking-card h2, .calendar-toolbar h2 { margin-top: 0; }
+
+.booking-layout { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 20px; align-items: start; }
+.calendar-toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.calendar-toolbar input, input, select { border: 1px solid #d5ddd2; border-radius: 14px; padding: 12px; font: inherit; width: 100%; }
+.calendar { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+.slot { text-align: left; border-radius: 18px; display: grid; gap: 6px; background: white; color: #18202a; border: 2px solid transparent; box-shadow: 0 8px 22px rgba(15, 23, 42, 0.07); }
+.slot span { color: #0b7f4c; font-weight: 900; }
+.slot small { color: #667085; }
+.slot.reserved { opacity: 0.44; cursor: not-allowed; background: #eef0ed; }
+.slot.selected { border-color: #0b7f4c; }
+.booking-card { position: sticky; top: 16px; }
+.booking-card.muted { color: #667085; }
+form { display: grid; gap: 14px; }
+label { display: grid; gap: 6px; font-weight: 700; }
+.error { color: #b42318; font-weight: 800; }
+.confirmation { display: grid; gap: 10px; padding-top: 16px; }
+.confirmation a { display: inline-block; background: #0b5f3a; color: white; text-align: center; }
+
+@media (max-width: 860px) {
+  main { padding: 16px; }
+  .hero, .ops-grid, .booking-layout { grid-template-columns: 1fr; }
+  .hero { padding: 28px; border-radius: 24px; }
+  .calendar-toolbar { display: grid; gap: 16px; }
+  .booking-card { position: static; }
+}

@@ -65,7 +65,7 @@ func (s *Service) CreateBooking(ctx context.Context, input CreateBookingInput) (
 		_ = s.payments.Rollback(ctx, input.PaymentIntentID)
 		return Booking{}, err
 	}
-	defer s.locker.Release(ctx, lockKey, lockToken)
+	defer s.locker.Release(context.WithoutCancel(ctx), lockKey, lockToken)
 
 	slot, err := s.store.GetSlot(ctx, input.SlotID)
 	if err != nil {

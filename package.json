@@ -1,0 +1,10 @@
+{
+  "name": "fk-sava-45-reservations",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "python3 -m http.server 5173",
+    "test": "python3 tests/static_checks.py && go test ./backend/..."
+  }
+}

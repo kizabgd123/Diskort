@@ -67,7 +67,7 @@ func (s StripeClient) post(ctx context.Context, path string, values url.Values, 
 	}
 	client := s.HTTPClient
 	if client == nil {
-		client = &http.Client{Timeout: 10 * time.Second}
+		client = http.DefaultClient
 	}
 	req, err := http.NewRequestWithContext(ctx, http.MethodPost, "https://api.stripe.com"+path, strings.NewReader(values.Encode()))
 	if err != nil {
